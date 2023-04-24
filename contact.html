@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <link rel="stylesheet" href="/CSS/style.css" />
+    <link rel="stylesheet" href="/CSS/bag.css" />
+    <link rel="icon" type="image/png" href="/img/favicon.png" />
+    <link rel="stylesheet" href="/CSS/contact.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/14.6.4/nouislider.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title>Dream Of Life</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <div class="container">
+          <div class="header__body">
+            <a href="" class="header__logo">
+              <img src="/img/Logo/Dream Style.png" alt="" />
+            </a>
+            <div class="header__burger">
+              <span></span>
+            </div>
+            <nav class="header__menu">
+              <ul class="header__list">
+                <li>
+                  <a href="index.html" class="header__link">Главная</a>
+                </li>
+                <li>
+                  <a href="contact.html" class="header__link">Контакты</a>
+                </li>
+                <li>
+                  <a href="help.html" class="header__link">Помощь</a>
+                </li>
+                <li>
+                  <a href="shop.html" class="header__link">Новинки</a>
+                </li>
+                <li>
+                  <img
+                    src="/img/Icon/icons8-пользователь-50.png"
+                    alt="Пользователь"
+                    class="header__user"
+                    id="myBtn"
+                  />
+                </li>
+                <li>
+                  <div class="cart">
+                    <div class="header__link">
+                      <img
+                        src="/img/Icon/icons8-добавить-в-корзину-покупок-50.png"
+                        alt="Корзина"
+                        class="header__icon"
+                      />
+                    </div>
+                  </div>
+                  <div class="cart-items"></div>
+                </li>
+                <span class="cart-counter">0</span>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </header>
+      <main class="main">
+        <section>
+          <h1 class="block-text__titleHelp">Контакты</h1>
+          <div class="container">
+            <div class="footer__body">
+              <nav class="footer__menu">
+                <div class="block one">
+                  <ul class="contacts__list">
+                    <li>
+                      <div class="contacts__title">Кол-центр</div>
+                      <div class="submenu">
+                        <p href="" class="contacts__link">
+                          <i
+                            class="fa-solid fa-phone"
+                            style="color: #000000"
+                          ></i
+                          >&nbsp;&nbsp;095 667 92 34
+                        </p>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="contacts__title">График работы</div>
+                      <div class="submenu">
+                        <p href="" class="contacts__link">
+                          <i
+                            class="fa-solid fa-clock"
+                            style="color: #000000"
+                          ></i
+                          >&nbsp;&nbsp;Пн-Пт: 9:00-20:00, <br />Сб: 10:00-19:00,
+                          <br />
+                          Вс: 11:00-18:00,
+                        </p>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="contacts__title">Email</div>
+                      <div class="submenu">
+                        <p href="" class="contacts__link">
+                          <i
+                            class="fa-solid fa-envelope"
+                            style="color: #000000"
+                          ></i
+                          >&nbsp;&nbsp;Почта с информацией о заказах:
+                          dreamoflife@gmail.com <br />Реклама:
+                          dream.style@gmail.com
+                        </p>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </nav>
+            </div>
+          </div>
+        </section>
+        <section>
+          <p class="block-text__titleMessage">
+            Если у Вас есть вопрос, предложение или комментарий, напишити нам
+            сообщение
+          </p>
+          <div class="contacts__item">
+            <label for="formName" class="contacts__label">Имя:</label>
+            <input
+              id="formNames"
+              type="text"
+              name="name"
+              class="contacts__input _req"
+            />
+          </div>
+          <div class="contacts__item">
+            <label for="formPhone" class="contacts__label">Телефон:</label>
+            <input
+              id="formPhones"
+              type="text"
+              name="phone"
+              class="contacts__input _req"
+            />
+          </div>
+          <div class="contacts__item">
+            <label for="formEmail" class="contacts__label">Email:</label>
+            <input
+              id="formEmails"
+              type="text"
+              name="email"
+              class="contacts__input _req"
+            />
+          </div>
+          <div class="contacts__item">
+            <label for="formMessage" class="contacts__label">Сообщение:</label>
+            <textarea
+              name="message"
+              id="formMessage"
+              class="contacts__input"
+            ></textarea>
+          </div>
+          <button id="submitButton">Отправить</button>
+        </section>
+
+        <!-- Модальное окно для кнопки "User" и форма-->
+        <div id="myModal" class="modal">
+          <div class="modal-content">
+            <button class="close-btn">Закрыть</button>
+            <div class="form">
+              <form action="#" id="form" class="form__body">
+                <h1 class="form__title">Регистрация</h1>
+                <div class="form__item">
+                  <label for="formName" class="form__label">Имя*:</label>
+                  <input
+                    id="formName"
+                    type="text"
+                    name="name"
+                    class="form__input _req"
+                  />
+                </div>
+                <div class="form__item">
+                  <label for="formEmail" class="form__label">E-mail*:</label>
+                  <input
+                    id="formEmail"
+                    type="text"
+                    name="email"
+                    class="form__input _req _email"
+                  />
+                </div>
+                <div class="form__item">
+                  <label for="formPass" class="form__label">Password*:</label>
+                  <input
+                    id="formPass"
+                    type="password"
+                    maxlength="15"
+                    name="pass"
+                    class="form__input _req"
+                  />
+                </div>
+                <div class="form__item">
+                  <div class="form__label">Укажите Ваш пол</div>
+                  <div class="options">
+                    <div class="options__item">
+                      <input
+                        checked
+                        id="formMan"
+                        type="radio"
+                        name="gender"
+                        value="man"
+                        class="options__input"
+                      />
+                      <label for="formMan" class="options__label"
+                        ><span>Мужской</span></label
+                      >
+                    </div>
+                    <div class="options__item">
+                      <input
+                        id="formGirl"
+                        type="radio"
+                        name="gender"
+                        value="girl"
+                        class="options__input"
+                      />
+                      <label for="formGirl" class="options__label"
+                        ><span>Женский</span></label
+                      >
+                    </div>
+                  </div>
+                </div>
+                <div class="form__item">
+                  <label for="formMessage" class="form__label"
+                    >Сообщение:</label
+                  >
+                  <textarea
+                    name="Message"
+                    id="formMessage"
+                    class="form__input"
+                  ></textarea>
+                </div>
+                <div class="form__item">
+                  <div class="form__label">Прикрепить фото</div>
+                  <div class="file">
+                    <div class="file__item">
+                      <input
+                        type="file"
+                        name="image"
+                        class="file__input"
+                        accept=".jpg, .png, .gif"
+                        id="formImage"
+                      />
+                      <div class="file__button">Выбрать</div>
+                    </div>
+                    <div id="formPreview" class="file__preview"></div>
+                  </div>
+                </div>
+                <div class="form__item">
+                  <div class="ckeckbox">
+                    <input
+                      checked
+                      id="formAgreement"
+                      type="checkbox"
+                      name="agreement"
+                      class="checkbox__input _req"
+                    />
+                    <label for="formAgreement" class="checkbox__label"
+                      ><span
+                        >Я даю свое согласие на обработку персональных данных в
+                        соответствии с <a href="">Условиями</a>*</span
+                      ></label
+                    >
+                  </div>
+                </div>
+                <button class="form__button" type="submit">Отправить</button>
+              </form>
+            </div>
+          </div>
+        </div>
+        <!--Модальное окно для кнопки "Heard"-->
+        <div id="myModalHeard" class="modalHeard">
+          <div class="modal-content">
+            <button class="close-btn">Закрыть</button>
+            <h1>Я модальное окно</h1>
+          </div>
+        </div>
+        <!--Модальное окно для кнопки "Basket"-->
+        <div class="modalBask">
+          <div class="modal-contentBask">
+            <h2>Корзина</h2>
+            <div class="modal-items"></div>
+            <button class="modal-close">Закрыть</button>
+            <div class="cart-total"></div>
+            <button class="checkout-button">Оформить заказ</button>
+            <div class="modalButton">
+              <div class="modal-contentButton">
+                <p></p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--Фильтрация по цене, бренду и размеру-->
+      </main>
+    </div>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer__body">
+          <nav class="footer__menu">
+            <div class="block one">
+              <ul class="footer__list">
+                <li>
+                  <div class="footer__title">О комании</div>
+                  <div class="submenu">
+                    <a href="" class="footer__link"
+                      >Политика конфиденциальности</a
+                    >
+                    <br /><a href="" class="footer__link">О нас</a> <br /><a
+                      href=""
+                      class="footer__link"
+                      >Условия использования сайта</a
+                    >
+                  </div>
+                </li>
+                <li>
+                  <div class="footer__title">Сервис</div>
+                  <div class="submenu">
+                    <a href="" class="footer__link">Оплата/доставка</a>
+                    <br /><a href="" class="footer__link">Возврат/обмен</a
+                    ><br /><a href="" class="footer__link">Вопросы/ответы</a>
+                  </div>
+                </li>
+                <li>
+                  <div class="footer__title">Мой кабинет</div>
+                  <div class="submenu">
+                    <a href="" class="footer__link">Заказы</a>
+                    <br /><a href="" class="footer__link">Избранное</a>
+                  </div>
+                </li>
+                <li>
+                  <div class="footer__title">Контакты</div>
+                  <div class="submenu">
+                    <a href="" class="footer__link"
+                      >Администрация сайта - 095 667 92 34</a
+                    >
+                    <br /><a href="" class="footer__link"
+                      >Почта: dreamoflife@gmail.com</a
+                    >
+                    <br /><a href="" class="footer__link"
+                      >Реклама: dream.style@gmail.com</a
+                    ><br /><br />
+                  </div>
+                </li>
+              </ul>
+              <ul class="footer__roster">
+                <a href="" class="footer__link">
+                  <img
+                    src="/img/Icon/icons8-facebook-50.png"
+                    alt="Пользователь"
+                    class="footer__icon"
+                  />
+                </a>
+                <a href="" class="footer__link">
+                  <img
+                    src="/img/Icon/icons8-instagram-50.png"
+                    alt="Пользователь"
+                    class="footer__icon"
+                  />
+                </a>
+                <a href="" class="footer__link">
+                  <img
+                    src="/img/Icon/icons8-твиттер-50.png"
+                    alt="Пользователь"
+                    class="footer__icon"
+                  />
+                </a>
+                <a href="" class="footer__link">
+                  <img
+                    src="/img/Icon//icons8-телеграм-50.png"
+                    alt="Пользователь"
+                    class="footer__icon"
+                  />
+                </a>
+              </ul>
+            </div>
+          </nav>
+        </div>
+      </div>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/14.6.4/nouislider.min.js"></script>
+    <script src="/JavaScript/contacts.js"></script>
+    <script src="/JavaScript/catalog.js"></script>
+    <script src="/JavaScript/app.js"></script>
+    <script src="/JavaScript/script.js"></script>
+    <script src="/JavaScript/shoping.js"></script>
+  </body>
+</html>

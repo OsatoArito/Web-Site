@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <link rel="stylesheet" href="/CSS/style.css" />
+    <link rel="stylesheet" href="/CSS/bag.css" />
+    <link rel="stylesheet" href="/CSS/Help.css" />
+    <link rel="icon" type="image/png" href="/img/favicon.png" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/14.6.4/nouislider.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title>Dream Of Life</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <div class="container">
+          <div class="header__body">
+            <a href="" class="header__logo">
+              <img src="/img/Logo/Dream Style.png" alt="" />
+            </a>
+            <div class="header__burger">
+              <span></span>
+            </div>
+            <nav class="header__menu">
+              <ul class="header__list">
+                <li>
+                  <a href="index.html" class="header__link">Главная</a>
+                </li>
+                <li>
+                  <a href="contact.html" class="header__link">Контакты</a>
+                </li>
+                <li>
+                  <a href="help.html" class="header__link">Помощь</a>
+                </li>
+                <li>
+                  <a href="shop.html" class="header__link">Новинки</a>
+                </li>
+                <li>
+                  <img
+                    src="/img/Icon/icons8-пользователь-50.png"
+                    alt="Пользователь"
+                    class="header__user"
+                    id="myBtn"
+                  />
+                </li>
+                <li>
+                  <div class="cart">
+                    <div class="header__link">
+                      <img
+                        src="/img/Icon/icons8-добавить-в-корзину-покупок-50.png"
+                        alt="Корзина"
+                        class="header__icon"
+                      />
+                    </div>
+                  </div>
+                  <div class="cart-items"></div>
+                </li>
+                <span class="cart-counter">0</span>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </header>
+      <!--Главная страница-->
+      <main class="main">
+        <section>
+          <h1 class="block-text__titleHelp">Помощь</h1>
+          <div class="questions__body">
+            <nav class="questions__menu">
+              <div class="block one">
+                <ul class="questions__list">
+                  <li>
+                    <div class="questions__titleHelp">
+                      Каковы способы доставки существуют в интернет-магазине
+                      Dream Style?
+                    </div>
+                    <div class="submenuHelp">
+                      <p href="" class="questions__linkHelp">
+                        В данный момент доставка на нашем интернет-магазина
+                        осуществляется на выбранное вами отделение "Нова Пошта"
+                        и "УкрПошта".
+                      </p>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="questions__titleHelp">
+                      Как я могу оплатить товар?
+                    </div>
+                    <div class="submenuHelp">
+                      <p href="" class="questions__linkHelp">
+                        Вы можете оплатить товар двумя способами: 1) Наложенным
+                        платежом в отделении “Нова пошта, УкрПошта”; 2)
+                        Банковской картой на сайте.
+                      </p>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="questions__titleHelp">
+                      Отличаются ли цены и ассортимент в интернет-магазине от
+                      цен оффлайн в магазинах сети?
+                    </div>
+                    <div class="submenuHelp">
+                      <p href="" class="questions__linkHelp">
+                        В данный момент оффлайн магазин не работает, но цены и
+                        ассортимент товара никак не отличаются.
+                      </p>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="questions__titleHelp">
+                      Какое количество товаров я могу заказать?
+                    </div>
+                    <div class="submenuHelp">
+                      <p href="" class="questions__linkHelp">
+                        В один заказ Вы можете добавить не более 10 единиц
+                        товаров.
+                      </p>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="questions__titleHelp">
+                      Что делать если товар мне не подошёл?
+                    </div>
+                    <div class="submenuHelp">
+                      <p href="" class="questions__linkHelp">
+                        Вы можете распаковать и осмотреть товар в момент
+                        получения заказа. Если по каким-либо причинам товары Вам
+                        не подходят, Вы можете не оплачивать заказ и доставку, а
+                        передать его обратной посылкой при помощи сервиса "Нова
+                        Пошта".
+                      </p>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="questions__titleHelp">
+                      Какой гарантийный срок товаров?
+                    </div>
+                    <div class="submenuHelp">
+                      <p href="" class="questions__linkHelp">
+                        Срок гарантии на товар зависит от его категории и
+                        составляет от 30 до 60 дней. Информацию по конкретному
+                        товару Вы можете уточнить у менеджера интернет-магазина.
+                      </p>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="questions__titleHelp">
+                      При заказе товара в интернет-магазине на какой срок я могу
+                      зарезервировать товар?
+                    </div>
+                    <div class="submenuHelp">
+                      <p href="" class="questions__linkHelp">
+                        Вы можете принять решение о покупке в течении 3 дней. По
+                        истечении этого срока мы будем вынуждены отменить Ваш
+                        заказ.
+                      </p>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="questions__titleHelp">
+                      Почему цена на товары такая высокая?
+                    </div>
+                    <div class="submenuHelp">
+                      <p href="" class="questions__linkHelp">
+                        В нашем интернет-магазине представлены только мировые
+                        бренды и оригинальные товары высокого качества, что
+                        обуславливает соответствующую стоимость.
+                      </p>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </nav>
+          </div>
+        </section>
+        <!-- Модальное окно для кнопки "User" и форма-->
+        <div id="myModal" class="modal">
+          <div class="modal-content">
+            <button class="close-btn">Закрыть</button>
+            <div class="form">
+              <form action="#" id="form" class="form__body">
+                <h1 class="form__title">Регистрация</h1>
+                <div class="form__item">
+                  <label for="formName" class="form__label">Имя*:</label>
+                  <input
+                    id="formName"
+                    type="text"
+                    name="name"
+                    class="form__input _req"
+                  />
+                </div>
+                <div class="form__item">
+                  <label for="formEmail" class="form__label">E-mail*:</label>
+                  <input
+                    id="formEmail"
+                    type="text"
+                    name="email"
+                    class="form__input _req _email"
+                  />
+                </div>
+                <div class="form__item">
+                  <label for="formPass" class="form__label">Password*:</label>
+                  <input
+                    id="formPass"
+                    type="password"
+                    maxlength="15"
+                    name="pass"
+                    class="form__input _req"
+                  />
+                </div>
+                <div class="form__item">
+                  <div class="form__label">Укажите Ваш пол</div>
+                  <div class="options">
+                    <div class="options__item">
+                      <input
+                        checked
+                        id="formMan"
+                        type="radio"
+                        name="gender"
+                        value="man"
+                        class="options__input"
+                      />
+                      <label for="formMan" class="options__label"
+                        ><span>Мужской</span></label
+                      >
+                    </div>
+                    <div class="options__item">
+                      <input
+                        id="formGirl"
+                        type="radio"
+                        name="gender"
+                        value="girl"
+                        class="options__input"
+                      />
+                      <label for="formGirl" class="options__label"
+                        ><span>Женский</span></label
+                      >
+                    </div>
+                  </div>
+                </div>
+                <div class="form__item">
+                  <label for="formMessage" class="form__label"
+                    >Сообщение:</label
+                  >
+                  <textarea
+                    name="Message"
+                    id="formMessage"
+                    class="form__input"
+                  ></textarea>
+                </div>
+                <div class="form__item">
+                  <div class="form__label">Прикрепить фото</div>
+                  <div class="file">
+                    <div class="file__item">
+                      <input
+                        type="file"
+                        name="image"
+                        class="file__input"
+                        accept=".jpg, .png, .gif"
+                        id="formImage"
+                      />
+                      <div class="file__button">Выбрать</div>
+                    </div>
+                    <div id="formPreview" class="file__preview"></div>
+                  </div>
+                </div>
+                <div class="form__item">
+                  <div class="ckeckbox">
+                    <input
+                      checked
+                      id="formAgreement"
+                      type="checkbox"
+                      name="agreement"
+                      class="checkbox__input _req"
+                    />
+                    <label for="formAgreement" class="checkbox__label"
+                      ><span
+                        >Я даю свое согласие на обработку персональных данных в
+                        соответствии с <a href="">Условиями</a>*</span
+                      ></label
+                    >
+                  </div>
+                </div>
+                <button class="form__button" type="submit">Отправить</button>
+              </form>
+            </div>
+          </div>
+        </div>
+        <!--Модальное окно для кнопки "Heard"-->
+        <div id="myModalHeard" class="modalHeard">
+          <div class="modal-content">
+            <button class="close-btn">Закрыть</button>
+            <h1>Я модальное окно</h1>
+          </div>
+        </div>
+        <!--Модальное окно для кнопки "Basket"-->
+        <div class="modalBask">
+          <div class="modal-contentBask">
+            <h2>Корзина</h2>
+            <div class="modal-items"></div>
+            <button class="modal-close">Закрыть</button>
+            <div class="cart-total"></div>
+            <button class="checkout-button">Оформить заказ</button>
+            <div class="modalButton">
+              <div class="modal-contentButton">
+                <p></p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--Фильтрация по цене, бренду и размеру-->
+      </main>
+    </div>
+    <footer class="footer">
+      <div class="container">
+        <div class="footer__body">
+          <nav class="footer__menu">
+            <div class="block one">
+              <ul class="footer__list">
+                <li>
+                  <div class="footer__title">О комании</div>
+                  <div class="submenu">
+                    <a href="" class="footer__link"
+                      >Политика конфиденциальности</a
+                    >
+                    <br /><a href="" class="footer__link">О нас</a> <br /><a
+                      href=""
+                      class="footer__link"
+                      >Условия использования сайта</a
+                    >
+                  </div>
+                </li>
+                <li>
+                  <div class="footer__title">Сервис</div>
+                  <div class="submenu">
+                    <a href="" class="footer__link">Оплата/доставка</a>
+                    <br /><a href="" class="footer__link">Возврат/обмен</a
+                    ><br /><a href="" class="footer__link">Вопросы/ответы</a>
+                  </div>
+                </li>
+                <li>
+                  <div class="footer__title">Мой кабинет</div>
+                  <div class="submenu">
+                    <a href="" class="footer__link">Заказы</a>
+                    <br /><a href="" class="footer__link">Избранное</a>
+                  </div>
+                </li>
+                <li>
+                  <div class="footer__title">Контакты</div>
+                  <div class="submenu">
+                    <a href="" class="footer__link"
+                      >Администрация сайта - 095 667 92 34</a
+                    >
+                    <br /><a href="" class="footer__link"
+                      >Почта: dreamoflife@gmail.com</a
+                    >
+                    <br /><a href="" class="footer__link"
+                      >Реклама: dream.style@gmail.com</a
+                    ><br /><br />
+                  </div>
+                </li>
+              </ul>
+              <ul class="footer__roster">
+                <a href="" class="footer__link">
+                  <img
+                    src="/img/Icon/icons8-facebook-50.png"
+                    alt="Пользователь"
+                    class="footer__icon"
+                  />
+                </a>
+                <a href="" class="footer__link">
+                  <img
+                    src="/img/Icon/icons8-instagram-50.png"
+                    alt="Пользователь"
+                    class="footer__icon"
+                  />
+                </a>
+                <a href="" class="footer__link">
+                  <img
+                    src="/img/Icon/icons8-твиттер-50.png"
+                    alt="Пользователь"
+                    class="footer__icon"
+                  />
+                </a>
+                <a href="" class="footer__link">
+                  <img
+                    src="/img/Icon//icons8-телеграм-50.png"
+                    alt="Пользователь"
+                    class="footer__icon"
+                  />
+                </a>
+              </ul>
+            </div>
+          </nav>
+        </div>
+      </div>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/14.6.4/nouislider.min.js"></script>
+    <script src="/JavaScript/catalog.js"></script>
+    <script src="/JavaScript/app.js"></script>
+    <script src="/JavaScript/script.js"></script>
+    <script src="/JavaScript/shoping.js"></script>
+  </body>
+</html>
