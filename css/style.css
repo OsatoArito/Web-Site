@@ -1,0 +1,1244 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&family=Playfair+Display:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap");
+/*=======================Стили для пагинатора, поиска и контейнера с товарами=========================*/
+
+*,
+*::before,
+*::after {
+  padding: 100;
+  margin: 0;
+  border: 5;
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+}
+.wrapper {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+/*Стили для строки поиска*/
+#search-container {
+  margin: 5px 0;
+}
+#search {
+  padding: 2px 20px;
+  border: 1px solid rgb(0, 0, 0);
+  border-radius: 5px;
+  font-size: 15px;
+  box-sizing: border-box;
+  font-family: "Montserrat";
+}
+.cloth {
+  font-size: 20px;
+  font-family: "Playfair Display";
+}
+.category__cloth {
+  border-radius: 15px;
+  font-size: 15px;
+  font-family: "Montserrat";
+}
+
+/* стили для контейнера продукта(изображение, кнопки/активная) */
+.product {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  width: 300px;
+}
+.product img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+  border-radius: 15px;
+}
+
+/* стили для контейнера продуктов */
+#catalog {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+/* стили для каждого блока продуктов внутри контейнера */
+#pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  gap: 10px;
+}
+#pagination button {
+  background-color: #ffffff;
+  color: rgb(0, 0, 0);
+  cursor: pointer;
+}
+#pagination button.active {
+  background-color: #000000;
+  color: rgb(255, 255, 255);
+  font-family: "Montserrat";
+}
+/*=================================Header=========================================*/
+.container {
+  max-width: 1200px;
+  margin: 0px auto;
+  padding: 5px 10px;
+}
+.header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 50;
+}
+.header:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url(/img/Fon/Fon\(плавает\).jpg);
+  z-index: 2;
+}
+.header__body {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  height: 60px;
+  align-items: center;
+}
+.header__logo {
+  flex: 0 0 65px;
+  z-index: 3;
+}
+.header__logo img {
+  max-width: 100%;
+  border-radius: 15px;
+  overflow: hidden;
+  display: block;
+}
+.header__burger {
+  display: none;
+  cursor: pointer;
+}
+.header_menu {
+  flex: 1 1 auto;
+}
+.header__list {
+  display: flex;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+.header__list li {
+  list-style: none;
+  margin: 0px 0px 0px 35px;
+  padding: 0px 0px 0px 0px;
+}
+.header__link {
+  color: white;
+  font-size: 18px;
+  text-decoration: none;
+  font-family: "Playfair Display";
+  margin: 0px 0px 0px 0px;
+}
+.cart-counter {
+  background-color: rgb(0, 0, 0);
+  color: #fff;
+  font-size: 15px;
+  padding: 3px 5px;
+  border-radius: 10px;
+  margin-left: -100px;
+  margin-top: -10px;
+}
+.header__icon {
+  display: flex;
+  align-items: center;
+  max-width: 100%;
+  border-radius: 10px;
+  width: 40px;
+  cursor: pointer;
+  margin-right: 70px;
+}
+.header__link:hover {
+  text-decoration: underline;
+}
+@media (max-width: 767px) {
+  body.lock {
+    overflow: hidden;
+  }
+  .header__body {
+    height: 45px;
+  }
+  .header__logo {
+    flex: 0 0 45px;
+  }
+  .header__burger {
+    display: block;
+    position: relative;
+    width: 30px;
+    height: 20px;
+    position: relative;
+    z-index: 3;
+  }
+  .header__burger span {
+    position: absolute;
+    background-color: white;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    top: 9px;
+    transition: all 0.5s ease 0s;
+  }
+  .header__burger:before,
+  .header__burger:after {
+    content: "";
+    background-color: white;
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    left: 0;
+    transition: all 0.5s ease 0s;
+  }
+  .header__burger:before {
+    top: 0;
+  }
+  .header__burger:after {
+    bottom: 0;
+  }
+  .header__burger.active:before {
+    transform: rotate(45deg);
+    top: 9px;
+  }
+  .header__burger.active::after {
+    transform: rotate(-45deg);
+    bottom: 9px;
+  }
+  .header__burger.active span {
+    transform: scale(0);
+  }
+  .header__menu {
+    position: fixed;
+    top: -100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    transition: all 0.7s ease 0s;
+    background-color: rgb(54, 54, 54);
+    padding: 80px 10px 20px 40px;
+  }
+  .header__menu.active {
+    top: 0;
+  }
+  .header__list {
+    display: block;
+  }
+  .header__list li {
+    margin: 0 0 20px 0;
+  }
+  .header__icon {
+    column-gap: line;
+    margin-bottom: -50px;
+    margin-left: -10px;
+  }
+  .cart-counter {
+    background-color: rgb(0, 0, 0);
+    color: #fff;
+    font-size: 15px;
+    padding: 3px 5px;
+    border-radius: 10px;
+    margin-left: 40px;
+    margin-top: -100px;
+  }
+}
+.header__user {
+  display: flex;
+  align-items: center;
+  max-width: 100%;
+  border-radius: 10px;
+  width: 40px;
+  cursor: pointer;
+}
+.header__select {
+  display: flex;
+  align-items: center;
+  max-width: 100%;
+  border-radius: 10px;
+  width: 40px;
+  cursor: pointer;
+}
+.coll {
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+  color: white;
+  cursor: pointer;
+}
+/*=================================Стили для контента============================================*/
+.block-text__center {
+  text-align: center;
+}
+.block-text__title {
+  font-weight: 900;
+  font-size: 50px;
+  line-height: 75%;
+  color: rgb(255, 255, 255);
+  font-family: "Playfair Display";
+}
+.block-text__title:not(:last-child) {
+  margin: 0px 0px 10px 0px;
+}
+.block-text__text {
+  line-height: 138%;
+  color: white;
+  font-size: 18px;
+  font-family: "Montserrat";
+}
+.block-text__text:not(:last-child) {
+  margin: 0px 0px 24px 0px;
+}
+.button {
+  font-family: "Raleway";
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: 800;
+  margin: 0px 0px 24px 60px;
+  font-size: 12px;
+  line-height: 22px;
+  letter-spacing: 1px;
+  color: rgb(0, 0, 0);
+  padding: 14px 30px;
+  background-color: #ffffff;
+  border-radius: 5px;
+  transition: background-color 0.3s ease 0s;
+}
+.button:hover {
+  background-color: #ffffff;
+}
+
+/*==================================================Main=====================================================*/
+.main {
+  padding: 70px 0px 0px 0px;
+  flex: 1 1 auto;
+}
+
+@media (max-width: 767px) {
+  .main {
+    padding: 60px 0px 0px 0px;
+  }
+}
+.get-started {
+  background: url(/img/Fon/Fon.jpg);
+}
+.get-started__container {
+  padding: 170px 15px 15px 100px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  position: relative;
+}
+.get-started__contant {
+  flex: 0 1 48%;
+  padding: 0px 20px;
+}
+.get-started__block-text {
+  max-width: 410px;
+}
+.get-started__image {
+  flex: 0 0 200px;
+  position: relative;
+  margin: -25px 0px 24px 100px;
+}
+.get-started__image img {
+  max-width: 100%;
+  border-radius: 25px;
+  overflow: hidden;
+  display: block;
+}
+/*===================================Медиа-запросы для фото и просто контента на первой секции===================================*/
+@media (max-width: 1330.4px) {
+  .get-started__container::before {
+    padding: 100px 15px 30px 15px;
+  }
+  .get-started__container::before {
+    display: none;
+  }
+  .get-started__block-text {
+    max-width: none;
+  }
+  .get-started__contant {
+    flex: 1 1 100%;
+    padding: 0;
+  }
+  .get-started__image {
+    flex: 1 1 100px;
+    text-align: center;
+    padding: 30px 0;
+  }
+  .get-started__image img {
+    max-width: 100%;
+    border-radius: 15px;
+    overflow: hidden;
+    display: block;
+  }
+}
+@media (max-width: 1029.6px) {
+  .get-started__container::before {
+    padding: 100px 15px 30px 15px;
+  }
+  .get-started__container::before {
+    display: none;
+  }
+  .get-started__block-text {
+    max-width: none;
+  }
+  .get-started__contant {
+    flex: 1 1 100%;
+    padding: 0;
+  }
+  .get-started__image img {
+    display: none;
+  }
+  .block-text__title:not(:last-child) {
+    margin: 0px 0px 10px 260px;
+  }
+  .block-text__text:not(:last-child) {
+    margin: 0px 0px 24px 260px;
+  }
+  .button {
+    margin: 0px 0px 24px 340px;
+  }
+}
+@media (max-width: 975.6px) {
+  .get-started__container::before {
+    display: none;
+  }
+  .get-started__block-text {
+    max-width: none;
+  }
+  .get-started__contant {
+    flex: 1 1 100%;
+    padding: 0;
+  }
+  .get-started__image {
+    flex: 1 1 50px;
+    text-align: center;
+    padding: 30px 0;
+  }
+  .get-started__image img {
+    max-width: 100%;
+    border-radius: 15px;
+    overflow: hidden;
+    display: none;
+  }
+  .block-text__title:not(:last-child) {
+    margin: 0px 0px 10px 190px;
+  }
+  .block-text__text:not(:last-child) {
+    margin: 0px 0px 24px 200px;
+  }
+  .button {
+    margin: 0px 0px 24px 270px;
+  }
+}
+@media (max-width: 767.2px) {
+  .get-started__container::before {
+    padding: 100px 15px 30px 15px;
+  }
+  .get-started__container::before {
+    display: none;
+  }
+  .get-started__block-text {
+    max-width: none;
+  }
+  .get-started__contant {
+    flex: 1 1 100%;
+    padding: 0;
+  }
+  .get-started__image {
+    flex: 1 1 100%;
+    text-align: center;
+    padding: 30px 0;
+  }
+  .get-started__image img {
+    max-width: 100%;
+    border-radius: 30px;
+    overflow: hidden;
+    display: block;
+    margin: 35px 0px -40px -20px;
+  }
+  .block-text__title:not(:last-child) {
+    margin: 0px 0px 10px 130px;
+  }
+  .block-text__text:not(:last-child) {
+    margin: 0px 0px 24px 140px;
+  }
+  .button {
+    margin: 0px 0px 24px 210px;
+  }
+}
+@media (max-width: 631.2px) {
+  .get-started__container::before {
+    padding: 100px 15px 30px 15px;
+  }
+  .get-started__container::before {
+    display: none;
+  }
+  .get-started__block-text {
+    max-width: none;
+  }
+  .get-started__contant {
+    flex: 1 1 100%;
+    padding: 0;
+  }
+  .get-started__image {
+    flex: 1 1 100%;
+    text-align: center;
+    display: block;
+    padding: 30px 0px 0px 0px;
+    margin: 0px 0px 0px 0px;
+  }
+  .get-started__image img {
+    max-width: 100%;
+    border-radius: 30px;
+    overflow: hidden;
+    display: block;
+    margin: 35px 0px 0px -20px;
+  }
+  .block-text__title:not(:last-child) {
+    margin: 0px 0px 10px 30px;
+  }
+  .block-text__text:not(:last-child) {
+    margin: 0px 0px 24px 40px;
+  }
+  .button {
+    margin: 0px 0px 24px 110px;
+  }
+}
+@media (max-width: 459.2px) {
+  .get-started__container::before {
+    padding: 100px 15px 30px 15px;
+  }
+  .get-started__container::before {
+    display: none;
+  }
+  .get-started__block-text {
+    max-width: none;
+  }
+  .get-started__contant {
+    flex: 1 1 100%;
+    padding: 0;
+  }
+  .get-started__image {
+    flex: 1 1 200px;
+    text-align: center;
+    padding: 30px 0px 0px 0px;
+    margin: 0px 0px 0px -20px;
+  }
+  .block-text__title:not(:last-child) {
+    margin: 0px 0px 10px -20px;
+  }
+  .block-text__text:not(:last-child) {
+    margin: 0px 0px 24px -10px;
+  }
+  .button {
+    margin: 0px 0px 24px 65px;
+  }
+}
+/*===================================================Footer==========================================================*/
+.footer {
+  width: 100%;
+  height: auto;
+  background-color: #222020;
+  margin: 20px auto;
+  padding-top: 20px;
+}
+.footer__list {
+  display: flex;
+  column-gap: 80px;
+  row-gap: 20px;
+  justify-content: center;
+}
+.footer__roster {
+  display: flex;
+  column-gap: 80px;
+  row-gap: 20px;
+  justify-content: center;
+  padding: 25px;
+}
+.footer__roster {
+  list-style: none;
+  margin: 0px 0px 0px 0px;
+}
+@media (max-width: 1007.2px) {
+  .footer {
+    padding: 30px 0px;
+  }
+  .footer__list {
+    flex-direction: column;
+  }
+  .footer__roster {
+    flex-direction: line;
+    column-gap: 40px;
+  }
+}
+.footer__list li {
+  list-style: none;
+  margin: 0px 0px 0px 35px;
+}
+.footer__title {
+  color: white;
+  font-size: 18x;
+  font-family: "Playfair Display";
+  position: relative;
+  padding: 0px 0px 0px 20px;
+  cursor: pointer;
+  text-decoration: none;
+}
+.footer__title:hover {
+  text-decoration: underline;
+}
+.footer__title:before,
+.footer__title:after {
+  content: "";
+  width: 10px;
+  height: 1px;
+  background-color: white;
+  position: absolute;
+  top: 12px;
+  transition: all 0.3s ease 0s;
+}
+.footer__title:before {
+  transform: rotate(40deg);
+  left: 0;
+}
+.footer__title::after {
+  transform: rotate(-40deg);
+  left: 8px;
+}
+.footer__title.active:before,
+.footer__title.active:after {
+  background-color: red;
+}
+.footer__title.active::before {
+  transform: rotate(-40deg);
+}
+.footer__title.active::after {
+  transform: rotate(40deg);
+}
+.submenu {
+  display: none;
+  color: white;
+  font-size: 12px;
+  font-family: "Playfair Display";
+  padding: 5px 0px 0px 20px;
+}
+.footer__link {
+  color: white;
+  text-decoration: none;
+  font-family: "Montserrat";
+}
+.footer__link:hover {
+  text-decoration: underline;
+}
+/*===============================================Sidebar(стили - цена,бренд,ращмер)===================================================*/
+.catalog {
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+  padding-top: 30px;
+}
+.sidebar__list {
+  display: flex;
+  column-gap: 80px;
+  row-gap: 20px;
+  justify-content: center;
+  font-size: 20px;
+  margin-bottom: 40px;
+}
+.sidebar__list li {
+  list-style: none;
+  margin: 0px 0px 0px 35px;
+}
+.sidebar__link {
+  color: rgb(0, 0, 0);
+  font-size: 12px;
+  text-decoration: none;
+  font-family: "Playfair Display";
+}
+.sidebar__link:hover {
+  text-decoration: underline;
+}
+@media (max-width: 1009.6px) {
+  .sidebar {
+    padding: 30px 0px;
+  }
+  .sidebar__list {
+    flex-direction: center;
+  }
+}
+@media (max-width: 787.2px) {
+  .sidebar {
+    padding: 30px 0px;
+  }
+  .sidebar__list {
+    flex-direction: column;
+  }
+}
+.sidebar__title {
+  color: rgb(0, 0, 0);
+  font-size: 18x;
+  font-family: "Playfair Display";
+  position: relative;
+  padding: 0px 0px 0px 20px;
+  cursor: pointer;
+  text-decoration: none;
+}
+.sidebar__title:hover {
+  text-decoration: underline;
+}
+.sidebar__title:before,
+.sidebar__title:after {
+  content: "";
+  width: 10px;
+  height: 1px;
+  background-color: rgb(0, 0, 0);
+  position: absolute;
+  top: 12px;
+  transition: all 0.3s ease 0s;
+}
+.sidebar__title:before {
+  transform: rotate(40deg);
+  left: 0;
+}
+.sidebar__title::after {
+  transform: rotate(-40deg);
+  left: 8px;
+}
+.sidebar__title.active:before,
+.sidebar__title.active:after {
+  background-color: red;
+}
+.sidebar__title.active::before {
+  transform: rotate(-40deg);
+}
+.sidebar__title.active::after {
+  transform: rotate(40deg);
+}
+.sidebar__color {
+  color: rgb(0, 0, 0);
+  font-size: 12px;
+  font-family: "Montserrat";
+}
+
+/*================Slider====================*/
+.slider {
+  position: relative;
+  background: #f4f4f4;
+  border-radius: 8px;
+  width: 135px;
+  height: 18px;
+  font-family: "Montserrat";
+}
+output {
+  position: absolute;
+  left: 34px;
+  top: 18px;
+  padding: 4px 10px;
+  background: rgb(255, 255, 255);
+}
+
+/*==================================Goods(сортировка одежды и живой поиск)============================================*/
+.goods {
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+  padding-top: 40px;
+}
+.goods__list {
+  display: flex;
+  column-gap: 20px;
+  row-gap: 20px;
+  justify-content: left;
+}
+.goods__title {
+  color: rgb(0, 0, 0);
+  font-size: 20px;
+  font-family: "Playfair Display";
+  position: relative;
+  padding: 0px 0px 0px 20px;
+  cursor: pointer;
+  text-decoration: none;
+}
+.goods__title:hover {
+  text-decoration: underline;
+}
+.goods__title:before,
+.goods__title:after {
+  content: "";
+  width: 10px;
+  height: 1px;
+  background-color: rgb(0, 0, 0);
+  position: absolute;
+  top: 12px;
+  transition: all 0.3s ease 0s;
+}
+@media (max-width: 1007.2px) {
+  .goods {
+    padding: 30px 0px;
+  }
+  .goods__list {
+    flex-direction: column;
+  }
+}
+.goods__title:before {
+  transform: rotate(40deg);
+  left: 0;
+}
+.goods__title::after {
+  transform: rotate(-40deg);
+  left: 8px;
+}
+.goods__title.active:before,
+.goods__title.active:after {
+  background-color: red;
+}
+.goods__title.active::before {
+  transform: rotate(-40deg);
+}
+.goods__title.active::after {
+  transform: rotate(40deg);
+}
+.submenu {
+  display: none;
+  color: rgb(0, 0, 0);
+  font-size: 12px;
+  font-family: "Playfair Display";
+  padding: 5px 0px 0px 20px;
+}
+.goods__link {
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+  font-family: "Playfair Display";
+}
+.goods__link:hover {
+  text-decoration: underline;
+}
+button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #000000;
+  border: none;
+  border-radius: 10px;
+  font-size: 12px;
+  font-weight: bold;
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+  transition: background-color 0.5s;
+  font-family: "Montserrat";
+  margin-top: 8px;
+}
+.min-max__price {
+  font-family: "Montserrat";
+  font-size: 14px;
+  color: black;
+}
+.font__filter {
+  border-radius: 10px;
+  color: black;
+  font-family: "Montserrat";
+  margin-top: 5px;
+}
+.price {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/*Product element*/
+.products-element__btn {
+  margin-top: 10px;
+  font-family: "Playfair Display";
+  border-radius: 10px;
+  font-size: 14px;
+  padding: 8px 60px;
+  border: 1px solid 15px;
+  cursor: pointer;
+  outline: none;
+  font-family: inherit;
+}
+.products-element__btn_active {
+  border: 1px solid transparent;
+  background-image: red;
+}
+
+/* Стили для модального окна */
+.modal {
+  display: none; /* по умолчанию модальное окно скрыто */
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.modal-content {
+  background-color: #ffffff;
+  margin: 10% auto;
+  padding: 20px;
+  width: 80%;
+  max-width: 600px;
+  border-radius: 30px;
+}
+#modal-description img {
+  width: 350px;
+  height: 400px;
+  margin-left: 100px;
+  margin-top: 25px;
+  border-radius: 30px;
+}
+.close {
+  color: #000000;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+#modal-description p {
+  font-family: "Montserrat";
+  margin-left: 240px;
+}
+#modal-name {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-family: "Montserrat";
+}
+input {
+  border-radius: 10px;
+}
+#modal-surname {
+  margin-bottom: 10px;
+  font-family: "Montserrat";
+}
+#modal-email {
+  margin-bottom: 10px;
+  font-family: "Montserrat";
+}
+#modal-order-button {
+  margin-left: 215px;
+  font-family: "Montserrat";
+}
+#modal-title {
+  font-family: "Playfair Display";
+  margin-top: 35px;
+}
+#modal-total {
+  font-family: "Montserrat";
+  margin-top: 15px;
+}
+
+::-webkit-scrollbar {
+  width: 15px;
+}
+::-webkit-scrollbar-track {
+  background-color: #000000;
+  box-shadow: 0 0 2px rgb(255, 255, 255, 0.9) inset;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, rgb(0, 0, 0), rgb(255, 255, 255));
+  background-color: rgb(255, 255, 255);
+  border-radius: 12px;
+  border: 3px solid #000000;
+}
+@media (max-width: 750.4px) {
+  #modal-description img {
+    width: 250px;
+    height: 350px;
+    margin-left: 30px;
+    margin-top: 20px;
+    border-radius: 25px;
+  }
+  .close {
+    color: rgb(0, 0, 0);
+    float: right;
+    font-size: 40px;
+    font-weight: bold;
+  }
+  #modal-title {
+    font-family: "Playfair Display";
+    margin-top: 15px;
+    font-size: 20px;
+    margin-left: 15px;
+  }
+  #modal-description p {
+    font-family: "Montserrat";
+    margin-left: 120px;
+    font-size: 15px;
+  }
+  #modal-order-button {
+    margin-left: 170px;
+    font-family: "Montserrat";
+  }
+}
+@media (max-width: 459.2px) {
+  #modal-order-button {
+    margin-left: 80px;
+    font-family: "Montserrat";
+  }
+}
+
+/*==========================Стили для формы==========================*/
+.form {
+  max-width: 550px;
+  margin: 0px auto;
+  color: rgb(0, 0, 0);
+  padding: 30px 0px;
+}
+.form__body {
+  position: relative;
+}
+.form__body::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(51, 51, 51, 0.9) url("/img/loading.gif") center / 50px
+    no-repeat;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease 0s;
+}
+.form__body._sending::after {
+  opacity: 1;
+  visibility: visible;
+}
+.form__title {
+  font-size: 40px;
+  font-weight: 700;
+  margin: 0px 0px 30px 0px;
+  font-family: "Playfair Display";
+}
+.form__item {
+  margin: 0px 0px 20px 0px;
+  font-family: "Playfair Display";
+}
+.form__label {
+  font-size: 18px;
+  display: block;
+  margin: 0px 0px 0px 0px;
+}
+.form__input {
+  height: 40px;
+  padding: 0px 20px;
+  border-radius: 10px;
+  width: 100%;
+  font-size: 18px;
+  transition: all 0.5s ease 0s;
+}
+.form__input:focus {
+  box-shadow: 0 0 15px #888;
+}
+.form__input._error {
+  box-shadow: 0 0 15px red;
+}
+textarea.form__input {
+  min-height: 120px;
+  resize: vertical;
+  padding: 20px;
+}
+.options {
+  padding: 10px 0px 0px 0px;
+}
+.options__item {
+  margin: 0px 0px 10px 0px;
+}
+.options__input {
+  display: none;
+}
+.options__input:checked + .options__label::after {
+  transform: scale(1);
+}
+.options__label {
+  display: inline-flex;
+  font-size: 16px;
+  line-height: 140%;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+}
+.options__label::before {
+  content: "";
+  align-self: flex-start;
+  flex: 0 0 24px;
+  height: 24px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 50%;
+  border: 2px solid;
+  margin: 0px 10px 0px 0px;
+}
+.options__label::after {
+  transition: all 0.5s ease 0s;
+  content: "";
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  width: 16px;
+  height: 16px;
+  background-color: black;
+  border-radius: 50px;
+  transform: scale(0);
+}
+.file__item {
+  position: relative;
+}
+.file__input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  font-size: 0;
+  cursor: pointer;
+}
+.file__button {
+  display: inline-flex;
+  min-height: 40px;
+  border-radius: 15px;
+  justify-content: center;
+  align-items: center;
+  padding: 0px 20px;
+  color: white;
+  background-color: black;
+  font-family: "Playfair Display";
+}
+.file__preview {
+  display: inline-block;
+  max-width: 100px;
+}
+.file__preview img {
+  max-width: 100%;
+  padding: 10px 0px 0px 0px;
+}
+.ckeckbox._error .checkbox__label::before {
+  box-shadow: 0 0 15px red;
+}
+.checkbox__input {
+  display: none;
+}
+.checkbox__input:checked + .checkbox__label::after {
+  transform: scale(1);
+}
+.checkbox__label {
+  font-size: 16px;
+  line-height: 140%;
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+}
+.checkbox__label::before {
+  content: "";
+  align-self: flex-start;
+  flex: 0 0 24px;
+  height: 24px;
+  background-color: white;
+  border: 2px solid;
+  border-radius: 5px;
+  margin: 0px 10px 0px 0px;
+}
+.checkbox__label::after {
+  transition: all 0.3s ease 0s;
+  content: "";
+  width: 16px;
+  height: 16px;
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  background-color: black;
+  border-radius: 3px;
+  transform: scale(0);
+}
+.checkbox__label a {
+  color: red;
+}
+.form__button {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 40px;
+  cursor: pointer;
+  font-weight: 700;
+  letter-spacing: 2px;
+  font-family: "Playfair Display";
+  transition: background-color 0.5 ease 0s;
+  position: relative;
+  top: 0;
+}
+.form__button:hover {
+  background-color: rgb(192, 34, 34);
+}
+.form__button:active {
+  top: 3px;
+}
+
+#close-form-button {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 6px 12px;
+  cursor: pointer;
+}
+
+.heard {
+  margin: 0px 0px 0px 240px;
+  font-size: 25px;
+}
+
+/*=================================Второе модальное окно=================================*/
+.modalHeard {
+  display: none; /* по умолчанию модальное окно скрыто */
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+#favorite-count {
+  color: white;
+}
+.favorite-button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.favorite-button img {
+  width: 40px;
+  height: 40px;
+}
