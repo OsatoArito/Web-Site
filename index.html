@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/CSS/style.css" />
+    <link rel="stylesheet" href="/CSS/bag.css" />
+    <link rel="icon" type="image/png" href="/img/favicon.png" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/14.6.4/nouislider.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title>Dream Of Life</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <!--Header-->
+      <header class="header">
+        <div class="container">
+          <div class="header__body">
+            <a href="" class="header__logo">
+              <img src="/img/Logo/Dream Style.png" alt="" />
+            </a>
+            <div class="header__burger">
+              <span></span>
+            </div>
+            <nav class="header__menu">
+              <ul class="header__list">
+                <li><a href="index.html" class="header__link">Главная</a></li>
+                <li>
+                  <a href="contact.html" class="header__link">Контакты</a>
+                </li>
+                <li><a href="help.html" class="header__link">Помощь</a></li>
+                <li><a href="shop.html" class="header__link">Новинки</a></li>
+                |
+                <li>
+                  <img
+                    src="/img/Icon/icons8-пользователь-50.png"
+                    alt="Пользователь"
+                    class="header__user"
+                    id="myBtn"
+                  />
+                </li>
+                <li>
+                  <div class="cart">
+                    <div class="header__link">
+                      <img
+                        src="/img/Icon/icons8-добавить-в-корзину-покупок-50.png"
+                        alt="Корзина"
+                        class="header__icon"
+                      />
+                    </div>
+                  </div>
+                  <div class="cart-items"></div>
+                </li>
+                <span class="cart-counter">0</span>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </header>
+      <!--Главная страница-->
+      <main class="main">
+        <!--Заглавня секция-->
+        <section class="get-started">
+          <div class="get-started__container">
+            <div class="get-started__content">
+              <div class="get-started__block-text block-text">
+                <h1 class="block-text__title">Dream of Life</h1>
+                <div class="block-text__text">
+                  брендовая одежда на любой вкус
+                </div>
+                <a href="#cat" class="block-text__button button">Каталог</a>
+              </div>
+            </div>
+            <div class="get-started__image">
+              <img src="img/Product/cloth/suits/Безымянный.png" alt="" />
+            </div>
+            <div class="get-started__image">
+              <img src="img/Product/cloth/hoodie/Palm angels.png" alt="" />
+            </div>
+            <div class="get-started__image">
+              <img
+                src="img/Product/cloth/shirts/Brunello Cucinelli.png"
+                alt=""
+              />
+            </div>
+          </div>
+        </section>
+        <!--Сортировка одежды и живой поиск-->
+        <section class="goods">
+          <!--Сортировка по виду одежды и живой поиск-->
+          <ul class="goods__list" id="type__all">
+            <div>
+              <label for="type" class="cloth">Одежда:</label>
+              <select id="type" class="category__cloth">
+                <option value="">...</option>
+                <option value="Жилеты">Жилеты</option>
+                <option value="Рубашки">Рубашки</option>
+                <option value="Худи">Худи</option>
+              </select>
+            </div>
+            <div>
+              <label for="type2" class="cloth">Аксессуары:</label>
+              <select id="type2" class="category__cloth">
+                <option value="">...</option>
+                <option value="Очки">Очки</option>
+                <option value="Головные уборы">Головные уборы</option>
+                <option value="Шарфы">Шарфы</option>
+              </select>
+            </div>
+            <div>
+              <label for="type3" class="cloth">Сумки:</label>
+              <select id="type3" class="category__cloth">
+                <option value="">...</option>
+                <option value="Поясные сумки">Поясные сумки</option>
+                <option value="Портфели/Рюкзаки">Портфели/Рюкзаки</option>
+                <option value="Наплечные сумки">Наплечные сумки</option>
+              </select>
+            </div>
+            <div>
+              <label for="type4" class="cloth">Обувь:</label>
+              <select id="type4" class="category__cloth">
+                <option value="">...</option>
+                <option value="Сапоги">Сапоги</option>
+                <option value="Туфли">Туфли</option>
+                <option value="Кроссовки">Кроссовки</option>
+              </select>
+            </div>
+
+            <div id="search-container">
+              <i class="fa-solid fa-magnifying-glass"></i>
+              <input
+                type="text"
+                id="search"
+                placeholder="Поиск товаров..."
+                maxlength="22"
+              />
+            </div>
+          </ul>
+        </section>
+        <!--Фильтрация по цене, бренду и размеру-->
+        <section class="catalog" id="cat">
+          <sidebar class="sidebar">
+            <div class="container">
+              <div class="sidebar__body">
+                <nav class="sidebar__menu">
+                  <div class="block one">
+                    <ul class="sidebar__list">
+                      <!--Поиск по цене-->
+                      <li>
+                        <div class="sidebar__title">Цена</div>
+                        <div class="submenu">
+                          <div class="price">
+                            <div id="filters">
+                              <label for="minPrice" class="min-max__price"
+                                >Минимальная цена:</label
+                              >
+                              <input
+                                class="font__filter"
+                                type="number"
+                                id="minPrice"
+                                min="0"
+                                value="0"
+                              />
+                              <br /><label for="maxPrice" class="min-max__price"
+                                >Максимальная цена:</label
+                              >
+                              <input
+                                class="font__filter"
+                                type="number"
+                                id="maxPrice"
+                                min="0"
+                                value="999999"
+                              />
+                              <br /><button id="applyFilter" class="price-btn">
+                                Фильтровать
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                      <!--Бренд-->
+                      <li>
+                        <div class="sidebar__title">Бренд</div>
+                        <div class="submenu">
+                          <select
+                            id="brand"
+                            style="
+                              border-radius: 20px;
+                              font-family: Montserrat;
+                              overflow-y: scroll;
+                            "
+                          >
+                            <option value="">Все бренды</option>
+                            <option value="Brunello Cucinelli">
+                              Brunello Cucinelli
+                            </option>
+                            <option value="Loro Piana">Loro Piana</option>
+                            <option value="Stefano Ricci">Stefano Ricci</option>
+                            <option value="D`uomo Milano">D`uomo Milano</option>
+                            <option value="Isaia">Isaia</option>
+                            <option value="Palm Angels">Plam Angels</option>
+                            <option value="Balmain">Balmain</option>
+                            <option value="Vilebrequin">Vilebrequin</option>
+                            <option value="Gucci">Gucci</option>
+                            <option value="Off-White">Off-White</option>
+                            <option value="Valentino">Valentino</option>
+                            <option value="Marcelo-Burlon">
+                              Marcelo-Burlon
+                            </option>
+                            <option value="Alexander McQueen">
+                              Alexander McQueen
+                            </option>
+                            <option value="Dolce&Gabbana">Dolce&Gabbana</option>
+                            <option value="Canali">Canali</option>
+                            <option value="Heron Preston">Heron Preston</option>
+                            <option value="Enrico Mandelli">
+                              Enrico Mandelli
+                            </option>
+                            <option value="Moorer">Moorer</option>
+                            <option value="Doucal`s">Doucal`s</option>
+                            <option value="Santoni">Santoni</option>
+                            <option value="Kiton">Kiton</option>
+                            <option value="Tom Ford">Tom Ford</option>
+                          </select>
+                        </div>
+                      </li>
+                      <!--Размер-->
+                      <li>
+                        <div class="sidebar__title">Размер</div>
+                        <div class="submenu">
+                          <form>
+                            <div style="height: 150px; overflow-y: scroll">
+                              <input
+                                type="radio"
+                                name="size"
+                                class="size-filter"
+                                value=""
+                                checked
+                              />
+                              <label for="All" class="sidebar__color">
+                                <span></span>Все
+                              </label>
+                              <br />
+                              <p
+                                style="
+                                  font-size: 16px;
+                                  font-family: Playfair Display;
+                                "
+                              >
+                                Размерность одежды
+                              </p>
+                              <input
+                                type="radio"
+                                name="size"
+                                class="size-filter"
+                                value="S"
+                              />
+                              <label for="S" class="sidebar__color">
+                                <span></span> S
+                              </label>
+                              <br />
+                              <input
+                                type="radio"
+                                name="size"
+                                class="size-filter"
+                                value="M"
+                              />
+                              <label for="S" class="sidebar__color">
+                                <span></span>M
+                              </label>
+                              <br />
+                              <input
+                                type="radio"
+                                name="size"
+                                class="size-filter"
+                                value="L"
+                              />
+                              <label for="L" class="sidebar__color">
+                                <span></span>L
+                              </label>
+                              <br />
+                              <p
+                                style="
+                                  font-size: 16px;
+                                  font-family: Playfair Display;
+                                "
+                              >
+                                Размерность шарфов
+                              </p>
+                              <input
+                                type="radio"
+                                name="size"
+                                class="size-filter"
+                                value="30/170см"
+                              />
+                              <label for="30/170см" class="sidebar__color">
+                                <span></span>30/170см
+                              </label>
+                              <br />
+                              <input
+                                type="radio"
+                                name="size"
+                                class="size-filter"
+                                value="40/180см"
+                              />
+                              <label for="40/180см" class="sidebar__color">
+                                <span></span>40/180см
+                              </label>
+                              <br />
+                              <input
+                                type="radio"
+                                name="size"
+                                class="size-filter"
+                                value="60/180см"
+                              />
+                              <label for="60/180см" class="sidebar__color">
+                                <span></span>60/180см
+                              </label>
+                              <br />
+                              <p
+                                style="
+                                  font-size: 16px;
+                                  font-family: Playfair Display;
+                                "
+                              >
+                                Размерность очков
+                              </p>
+                              <input
+                                type="radio"
+                                name="size"
+                                class="size-filter"
+                                value="45мм:42мм:130мм"
+                              />
+                              <label
+                                for="45мм:42мм:130мм"
+                                class="sidebar__color"
+                              >
+                                <span></span>45мм:42мм:130мм
+                              </label>
+
+                              <br />
+                              <input
+                                type="radio"
+                                name="size"
+                                class="size-filter"
+                                value="32мм:40мм:120мм"
+                              />
+                              <label
+                                for="32мм:40мм:120мм"
+                                class="sidebar__color"
+                              >
+                                <span></span>32мм:40мм:120мм
+                              </label>
+                              <br />
+                              <input
+                                type="radio"
+                                name="size"
+                                class="size-filter"
+                                value="38мм:40мм:130мм"
+                              />
+                              <label
+                                for="38мм:40мм:130мм"
+                                class="sidebar__color"
+                              >
+                                <span></span>38мм:40мм:130мм
+                              </label>
+                              <br />
+                              <p
+                                style="
+                                  font-size: 16px;
+                                  font-family: Playfair Display;
+                                "
+                              >
+                                Размерность обуви
+                              </p>
+                              <input
+                                type="radio"
+                                name="size"
+                                class="size-filter"
+                                value="39см"
+                              />
+                              <label for="39см" class="sidebar__color">
+                                <span></span>39см
+                              </label>
+                              <br />
+                              <input
+                                type="radio"
+                                name="size"
+                                class="size-filter"
+                                value="40см"
+                              />
+                              <label for="40см" class="sidebar__color">
+                                <span></span>40см
+                              </label>
+                              <br />
+                              <input
+                                type="radio"
+                                name="size"
+                                class="size-filter"
+                                value="42см"
+                              />
+                              <label for="42см" class="sidebar__color">
+                                <span></span>42см
+                              </label>
+                              <br />
+                              <input
+                                type="radio"
+                                name="size"
+                                class="size-filter"
+                                value="44см"
+                              />
+                              <label for="44" class="sidebar__color">
+                                <span></span>44см
+                              </label>
+                              <br />
+                              <input
+                                type="radio"
+                                name="size"
+                                class="size-filter"
+                                value="46см"
+                              />
+                              <label for="46см" class="sidebar__color">
+                                <span></span>46см
+                              </label>
+                              <br />
+                              <input
+                                type="radio"
+                                name="size"
+                                class="size-filter"
+                                value="47.5см"
+                              />
+                              <label for="47.5см" class="sidebar__color">
+                                <span></span>47.5см
+                              </label>
+                              <br />
+                              <p
+                                style="
+                                  font-size: 16px;
+                                  font-family: Playfair Display;
+                                "
+                              >
+                                Размерность сумок
+                              </p>
+                              <input
+                                type="radio"
+                                name="size"
+                                class="size-filter"
+                                value="ONE SIZE"
+                              />
+                              <label for="ONE SIZE" class="sidebar__color">
+                                <span></span>ONE SIZE
+                              </label>
+                            </div>
+                          </form>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </nav>
+              </div>
+            </div>
+          </sidebar>
+        </section>
+        <!--Отображенение каталога товара и пагинатора-->
+        <section>
+          <div id="catalog"></div>
+          <div id="pagination"></div>
+        </section>
+        <!--Секция с модальными окнами-->
+        <section>
+          <!-- Модальное окно для кнопки "Buy" -->
+          <div class="modal">
+            <div class="modal-content">
+              <span class="close">&times;</span>
+              <h2 id="modal-title"></h2>
+              <p id="modal-description"></p>
+              <br /><label for="modal-name">Имя:</label>
+              <input type="text" id="modal-name" required />
+              <br /><label for="modal-surname">Фамилия:</label>
+              <input type="text" id="modal-surname" required />
+              <br /><label for="modal-email">Email:</label>
+              <input type="email" id="modal-email" required />
+              <br /><label for="modal-quantity">Количество:</label>
+              <input
+                type="number"
+                id="modal-quantity"
+                min="1"
+                max="10"
+                value="0"
+              />
+              <br />
+              <p id="modal-total">Общая сумма: 0 грн.</p>
+              <br /><button id="modal-order-button">Заказать товар</button>
+            </div>
+          </div>
+          <!-- Модальное окно для кнопки "User"-->
+          <div id="myModal" class="modal">
+            <div class="modal-content">
+              <button class="close-btn">Закрыть</button>
+              <div class="form">
+                <form action="#" id="form" class="form__body">
+                  <h1 class="form__title">Регистрация</h1>
+                  <div class="form__item">
+                    <label for="formName" class="form__label">Имя*:</label>
+                    <input
+                      id="formName"
+                      type="text"
+                      name="name"
+                      class="form__input _req"
+                    />
+                  </div>
+                  <div class="form__item">
+                    <label for="formEmail" class="form__label">E-mail*:</label>
+                    <input
+                      id="formEmail"
+                      type="text"
+                      name="email"
+                      class="form__input _req _email"
+                    />
+                  </div>
+                  <div class="form__item">
+                    <label for="formPass" class="form__label">Password*:</label>
+                    <input
+                      id="formPass"
+                      type="password"
+                      maxlength="15"
+                      name="pass"
+                      class="form__input _req"
+                    />
+                  </div>
+                  <div class="form__item">
+                    <div class="form__label">Укажите Ваш пол</div>
+                    <div class="options">
+                      <div class="options__item">
+                        <input
+                          checked
+                          id="formMan"
+                          type="radio"
+                          name="gender"
+                          value="man"
+                          class="options__input"
+                        />
+                        <label for="formMan" class="options__label"
+                          ><span>Мужской</span></label
+                        >
+                      </div>
+                      <div class="options__item">
+                        <input
+                          id="formGirl"
+                          type="radio"
+                          name="gender"
+                          value="girl"
+                          class="options__input"
+                        />
+                        <label for="formGirl" class="options__label"
+                          ><span>Женский</span></label
+                        >
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form__item">
+                    <label for="formMessage" class="form__label"
+                      >Сообщение:</label
+                    >
+                    <textarea
+                      name="Message"
+                      id="formMessage"
+                      class="form__input"
+                    ></textarea>
+                  </div>
+                  <div class="form__item">
+                    <div class="ckeckbox">
+                      <input
+                        checked
+                        id="formAgreement"
+                        type="checkbox"
+                        name="agreement"
+                        class="checkbox__input _req"
+                      />
+                      <label for="formAgreement" class="checkbox__label"
+                        ><span
+                          >Я даю свое согласие на обработку персональных данных
+                          в соответствии с <a href="">Условиями</a>*</span
+                        ></label
+                      >
+                    </div>
+                  </div>
+                  <button class="form__button" type="submit">Отправить</button>
+                </form>
+              </div>
+            </div>
+          </div>
+          <!--Модальное окно для кнопки "Basket"-->
+          <div class="modalBask">
+            <div class="modal-contentBask">
+              <h2>Корзина</h2>
+              <div class="modal-items"></div>
+              <button class="modal-close">Закрыть</button>
+              <div class="cart-total"></div>
+              <button class="checkout-button">Оформить заказ</button>
+              <div class="modalButton">
+                <div class="modal-contentButton">
+                  <p></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+      <!--Каталог и пагинатор-->
+    </div>
+    <!--Подвал-->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer__body">
+          <nav class="footer__menu">
+            <div class="block one">
+              <ul class="footer__list">
+                <li>
+                  <div class="footer__title">О комании</div>
+                  <div class="submenu">
+                    <a href="" class="footer__link"
+                      >Политика конфиденциальности</a
+                    >
+                    <br /><a href="" class="footer__link">О нас</a> <br /><a
+                      href=""
+                      class="footer__link"
+                      >Условия использования сайта</a
+                    >
+                  </div>
+                </li>
+                <li>
+                  <div class="footer__title">Сервис</div>
+                  <div class="submenu">
+                    <a href="" class="footer__link">Оплата/доставка</a>
+                    <br /><a href="" class="footer__link">Возврат/обмен</a
+                    ><br /><a href="" class="footer__link">Вопросы/ответы</a>
+                  </div>
+                </li>
+                <li>
+                  <div class="footer__title">Мой кабинет</div>
+                  <div class="submenu">
+                    <a href="" class="footer__link">Заказы</a>
+                    <br /><a href="" class="footer__link">Избранное</a>
+                  </div>
+                </li>
+                <li>
+                  <div class="footer__title">Контакты</div>
+                  <div class="submenu">
+                    <a href="" class="footer__link"
+                      >Администрация сайта - 095 667 92 34</a
+                    >
+                    <br /><a href="" class="footer__link"
+                      >Почта: dreamoflife@gmail.com</a
+                    >
+                    <br /><a href="" class="footer__link"
+                      >Реклама: dream.style@gmail.com</a
+                    >
+                  </div>
+                </li>
+              </ul>
+              <ul class="footer__roster">
+                <a href="" class="footer__link">
+                  <img
+                    src="/img/Icon/icons8-facebook-50.png"
+                    alt="Пользователь"
+                    class="footer__icon"
+                  />
+                </a>
+                <a href="" class="footer__link">
+                  <img
+                    src="/img/Icon/icons8-instagram-50.png"
+                    alt="Пользователь"
+                    class="footer__icon"
+                  />
+                </a>
+                <a href="" class="footer__link">
+                  <img
+                    src="/img/Icon/icons8-твиттер-50.png"
+                    alt="Пользователь"
+                    class="footer__icon"
+                  />
+                </a>
+                <a href="" class="footer__link">
+                  <img
+                    src="/img/Icon//icons8-телеграм-50.png"
+                    alt="Пользователь"
+                    class="footer__icon"
+                  />
+                </a>
+              </ul>
+            </div>
+          </nav>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/14.6.4/nouislider.min.js"></script>
+    <script src="/JavaScript/catalog.js"></script>
+    <script src="/JavaScript/app.js"></script>
+    <script src="/JavaScript/script.js"></script>
+    <script src="/JavaScript/shoping.js"></script>
+  </body>
+</html>
