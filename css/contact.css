@@ -1,0 +1,153 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&family=Playfair+Display:wght@500&display=swap");
+/*=======================Стили для пагинатора, поиска и контейнера с товарами=========================*/
+*,
+*::before,
+*::after {
+  padding: 100;
+  margin: 0;
+  border: 5;
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+}
+.wrapper {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.mainHelp {
+  padding: 0px 200px 0px 0px;
+  flex: 1 1 auto;
+}
+.title h1 {
+  font-size: 35px;
+}
+@media (max-width: 767px) {
+  .mainHelp {
+    padding: 60px 0px 0px 0px;
+  }
+}
+.block-text__titleHelp {
+  text-align: center; /* Выравнивание текста по центру */
+  width: 100%; /* Задание ширины блока на 100% */
+  padding: 30px;
+  font-size: 30px;
+  font-family: "Playfair Display";
+}
+.block-text__titleMessage {
+  text-align: center; /* Выравнивание текста по центру */
+  width: 100%; /* Задание ширины блока на 100% */
+  padding: 30px;
+  font-size: 25px;
+  font-family: "Playfair Display";
+}
+
+.contacts__title {
+  color: rgb(0, 0, 0);
+  font-size: 20px;
+  font-family: "Playfair Display";
+  position: relative;
+  padding: 0px 0px 0px 25px;
+  cursor: pointer;
+  text-decoration: none;
+}
+.contacts__title:hover {
+  text-decoration: underline;
+}
+.contacts__title:before,
+.contacts__title:after {
+  content: "";
+  width: 20px;
+  height: 2px;
+  background-color: rgb(0, 0, 0);
+  position: absolute;
+  top: 12px;
+  transition: all 0.3s ease 0s;
+}
+.contacts__title:before {
+  transform: rotate(90deg);
+  left: 0;
+}
+.contacts__title::after {
+  transform: rotate(0deg);
+  left: 0px;
+}
+.contacts__title.active:before,
+.contacts__title.active:after {
+  background-color: red;
+}
+.contacts__title.active::before {
+  transform: rotate(-45deg);
+}
+.contacts__title.active::after {
+  transform: rotate(45deg);
+}
+.submenuHelp {
+  display: none;
+  color: rgb(0, 0, 0);
+  font-size: 12px;
+  font-family: "Playfair Display";
+  padding: 5px 0px 0px 20px;
+}
+.contacts__link {
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+  font-family: "Montserrat";
+  font-size: 15px;
+}
+.contacts__link:hover {
+  text-decoration: underline;
+  cursor: crosshair;
+}
+.contacts__list {
+  display: flex;
+  column-gap: 80px;
+  row-gap: 20px;
+  justify-content: center;
+}
+.contacts__list li {
+  list-style: none;
+  margin: 0px 0px 0px 65px;
+}
+
+@media (max-width: 1007.2px) {
+  .footer {
+    padding: 30px 0px;
+  }
+  .contacts__list {
+    flex-direction: column;
+  }
+  .footer__roster {
+    flex-direction: line;
+    column-gap: 40px;
+  }
+}
+.contacts__label {
+  font-size: 18px;
+  display: block;
+  margin: 0px 0px 0px 0px;
+}
+.contacts__input {
+  height: 30px;
+  padding: 0px 20px;
+  border-radius: 10px;
+  width: 300px;
+  font-size: 15px;
+  margin: 0px 0px 0px 0px;
+  transition: all 0.5s ease 0s;
+}
+textarea.contacts__input {
+  min-height: 120px;
+  min-width: 420px;
+  resize: vertical;
+  padding: 20px;
+}
+.contacts__item {
+  margin: 0px 0px 10px 10px;
+  font-family: "Playfair Display";
+}
+button {
+  margin-left: 35px;
+}

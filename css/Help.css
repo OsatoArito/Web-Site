@@ -1,0 +1,100 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&family=Playfair+Display:wght@500&display=swap");
+/*=======================Стили для пагинатора, поиска и контейнера с товарами=========================*/
+*,
+*::before,
+*::after {
+  padding: 100;
+  margin: 0;
+  border: 5;
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+}
+.wrapper {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.mainHelp {
+  padding: 0px 200px 0px 0px;
+  flex: 1 1 auto;
+}
+.title h1 {
+  font-size: 35px;
+}
+@media (max-width: 767px) {
+  .mainHelp {
+    padding: 60px 0px 0px 0px;
+  }
+}
+.block-text__titleHelp {
+  text-align: center; /* Выравнивание текста по центру */
+  width: 100%; /* Задание ширины блока на 100% */
+  padding: 30px;
+  font-size: 30px;
+  font-family: "Playfair Display";
+}
+
+.questions__titleHelp {
+  color: rgb(0, 0, 0);
+  font-size: 20px;
+  font-family: "Playfair Display";
+  position: relative;
+  padding: 0px 0px 0px 25px;
+  cursor: pointer;
+  text-decoration: none;
+}
+.questions__titleHelp:hover {
+  text-decoration: underline;
+}
+.questions__titleHelp:before,
+.questions__titleHelp:after {
+  content: "";
+  width: 20px;
+  height: 2px;
+  background-color: rgb(0, 0, 0);
+  position: absolute;
+  top: 12px;
+  transition: all 0.3s ease 0s;
+}
+.questions__titleHelp:before {
+  transform: rotate(90deg);
+  left: 0;
+}
+.questions__titleHelp::after {
+  transform: rotate(0deg);
+  left: 0px;
+}
+.questions__titleHelp.active:before,
+.questions__titleHelp.active:after {
+  background-color: red;
+}
+.questions__titleHelp.active::before {
+  transform: rotate(-45deg);
+}
+.questions__titleHelp.active::after {
+  transform: rotate(45deg);
+}
+.submenuHelp {
+  display: none;
+  color: rgb(0, 0, 0);
+  font-size: 12px;
+  font-family: "Playfair Display";
+  padding: 5px 0px 0px 20px;
+}
+.questions__linkHelp {
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+  font-family: "Montserrat";
+  font-size: 15px;
+}
+.questions__linkHelp:hover {
+  text-decoration: underline;
+  cursor: crosshair;
+}
+.questions__list li {
+  list-style: none;
+  margin: 35px 0px 0px 65px;
+}
